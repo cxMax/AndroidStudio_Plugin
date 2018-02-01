@@ -1,0 +1,39 @@
+<idea-plugin>
+  <id>com.cxmax.plugin.firstplugindemo</id>
+  <name>firstplugindemo</name>
+  <version>1.0</version>
+  <vendor email="caixi169@gmail.com" url="">cxmax</vendor>
+
+
+  <description><![CDATA[
+      first plugin demo
+    ]]></description>
+
+  <change-notes><![CDATA[
+      null
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="131.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="FirstPluginDemo.CreateDialogAction" class="com.cxmax.plugin.firstplugindemo.CreateDialogAction"
+            text="Android Dialog" description="Create a dialog">
+      <add-to-group group-id="CodeMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt Q"/>
+    </action>
+  </actions>
+
+</idea-plugin>

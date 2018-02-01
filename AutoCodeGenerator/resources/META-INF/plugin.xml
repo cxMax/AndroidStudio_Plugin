@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>com.cxmax.plugin.autocodegenerator</id>
+  <name>AutoCodeGenerator</name>
+  <version>1.0</version>
+  <vendor email="caixi169@gmail.com" url="">cxmax</vendor>
+
+  <description><![CDATA[
+      first android plugin demo to generate code automatically by using plugin.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+       <li>Supported generate inner "Item & ItemViewBinder" codes</li>
+        <li>refer from MultiTypeTemplates</ali>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="138.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="CreateItemFileAction" class="com.cxmax.plugin.codegenerator.CreateItemFilesAction" text="AutoCodeGenerator"
+            description="Create an Item class and ItemViewBinder." icon="/fileTypes/javaClass.png">
+      <add-to-group group-id="NewGroup" relative-to-action="NewFile" anchor="before"/>
+    </action>
+  </actions>
+
+  <actions>
+    <action id="AutoCodeGenerator" class="com.cxmax.plugin.codegenerator.CreateInnerItemCodesAction" text="AutoCodeGenerator">
+      <add-to-group group-id="GenerateGroup"/>
+    </action>
+  </actions>
+
+</idea-plugin>
